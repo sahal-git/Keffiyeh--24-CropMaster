@@ -3,37 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KEFFIYEH CropMaster</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet">
+    <title>Welcome to KEFFIYEH CropMaster</title>
+    <meta http-equiv="refresh" content="3;url=home.html"> <!-- Redirects after 3 seconds -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .welcome-message {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>KEFFIYEH '24</h1>
-        </header>
-        <main>
-            <div class="input-group">
-                <input type="number" id="fileName" placeholder="Candidate Code no">
-            </div>
-            <div class="upload-section">
-                <label for="imageUpload" class="upload-label">
-                    <input type="file" id="imageUpload" accept="image/*" hidden>
-                    <span>Upload Image</span>
-                </label>
-            </div>
-            <div id="cropperContainer" class="cropper-container">
-                <img id="image" style="display: none;">
-            </div>
-            <div class="input-group">
-                <button id="downloadBtn" disabled>Download</button>
-            </div>
-        </main>
-        <footer>
-            <p>&copy; 2024 KEFFIYEH CropMaster</p>
-        </footer>
+    <div class="welcome-message">
+        <h1>Welcome to KEFFIYEH CropMaster!</h1>
+        <p>You'll be redirected to the app shortly...</p>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
-    <script src="scripts.js"></script>
 </body>
 </html>
