@@ -35,6 +35,9 @@ document.getElementById('imageUpload').addEventListener('change', function(e) {
                         link.click();
 
                         URL.revokeObjectURL(link.href);
+
+                        // Redirect to the Google Forms link after download
+                        window.location.href = "https://forms.gle/hHFJwMQ8rJZWyCrH8";
                     }
                 }, 'image/jpeg', 0.9);
             }, { once: true });
