@@ -57,16 +57,31 @@ document.getElementById('imageUpload').addEventListener('change', function(e) {
 function showRedirectButton() {
     const redirectButton = document.createElement('button');
     redirectButton.textContent = "Click here if not redirected";
+    
+    // Enhanced styling for the button
     redirectButton.style.position = "fixed";
-    redirectButton.style.bottom = "20px";
-    redirectButton.style.right = "20px";
-    redirectButton.style.padding = "10px 20px";
-    redirectButton.style.backgroundColor = "#007BFF";
-    redirectButton.style.color = "#fff";
+    redirectButton.style.top = "50%";
+    redirectButton.style.left = "50%";
+    redirectButton.style.transform = "translate(-50%, -50%)";
+    redirectButton.style.padding = "15px 30px";
+    redirectButton.style.backgroundColor = "#FF4500";  // Bright orange color for attention
+    redirectButton.style.color = "#ffffff";
+    redirectButton.style.fontSize = "18px";
+    redirectButton.style.fontWeight = "bold";
     redirectButton.style.border = "none";
-    redirectButton.style.borderRadius = "5px";
+    redirectButton.style.borderRadius = "8px";
     redirectButton.style.cursor = "pointer";
-    redirectButton.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
+    redirectButton.style.boxShadow = "0 4px 15px rgba(0, 0, 0, 0.2)";
+    redirectButton.style.zIndex = "1000";  // Ensure it appears above other content
+    redirectButton.style.transition = "background-color 0.3s ease";
+
+    // Hover effect
+    redirectButton.addEventListener('mouseover', function() {
+        redirectButton.style.backgroundColor = "#FF6347";  // Lighter orange on hover
+    });
+    redirectButton.addEventListener('mouseout', function() {
+        redirectButton.style.backgroundColor = "#FF4500";
+    });
 
     redirectButton.addEventListener('click', function() {
         window.location.href = "https://forms.gle/hHFJwMQ8rJZWyCrH8";
