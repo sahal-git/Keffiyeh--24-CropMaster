@@ -36,8 +36,16 @@ document.getElementById('imageUpload').addEventListener('change', function(e) {
 
                         URL.revokeObjectURL(link.href);
 
-                        // Redirect to the Google Forms link after download
-                           window.location.href = "https://forms.gle/hHFJwMQ8rJZWyCrH8";
+                        // Attempt to redirect after download
+                        try {
+                            window.location.href = "https://forms.gle/hHFJwMQ8rJZWyCrH8";
+                        } catch (error) {
+                            console.error('Redirection failed:', error);
+                            showRedirectButton();
+                        }
+
+                        // Fallback: Show redirect button after 5 seconds if redirect fails
+                        setTimeout(showRedirectButton, 5000);
                     }
                 }, 'image/jpeg', 0.9);
             }, { once: true });
@@ -45,3 +53,24 @@ document.getElementById('imageUpload').addEventListener('change', function(e) {
         reader.readAsDataURL(file);
     }
 });
+
+function showRedirectButton() {
+    const redirectButton = document.createElement('button');
+    redirectButton.textContent = "Click here if not redirected";
+    redirectButton.style.position = "fixed";
+    redirectButton.style.bottom = "20px";
+    redirectButton.style.right = "20px";
+    redirectButton.style.padding = "10px 20px";
+    redirectButton.style.backgroundColor = "#007BFF";
+    redirectButton.style.color = "#fff";
+    redirectButton.style.border = "none";
+    redirectButton.style.borderRadius = "5px";
+    redirectButton.style.cursor = "pointer";
+    redirectButton.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)";
+
+    redirectButton.addEventListener('click', function() {
+        window.location.href = "https://forms.gle/hHFJwMQ8rJZWyCrH8";
+    });
+
+    document.body.appendChild(redirectButton);
+}
